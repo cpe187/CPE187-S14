@@ -5,7 +5,7 @@ FileName : negedge_detect.v
 Date : 02/18/2014
 }}}*/
 module negedge_detect(
-   input clk, din,
+   input clk, d,
    output n_edge
 );
 
