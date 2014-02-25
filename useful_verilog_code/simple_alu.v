@@ -1,5 +1,5 @@
 'timescale 1ns / 1ps
-/*{{{ --- simple alu ---
+/*{{{ --- Aimple Alu ---
 Author : Nathan Gonzales
 Date : Feb. 25, 2014
 Description : just a tiny example alu
