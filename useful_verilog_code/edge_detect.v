@@ -5,8 +5,8 @@ FileName : edge_detect.v
 Date : 02/18/2014
 }}}*/
 module edge_detect(
-   input clk, din,
-   output edje
+   input clk, d,
+   output p
 );
 
 reg q;
@@ -14,7 +14,7 @@ reg q;
 always @(posedge clk)
    q <= d;
 
-assign edje = q^d;
+assign p = q^d;
 
 endmodule
 

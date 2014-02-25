@@ -5,7 +5,7 @@ FileName : posedge_detect.v
 Date : 02/18/2014
 }}}*/
 module posedge_detect(
-   input clk, din,
+   input clk, d,
    output p_edge
 );
 
