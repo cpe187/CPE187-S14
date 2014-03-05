@@ -26,7 +26,7 @@ module top_tb;
 
 	// Inputs
 	reg clk;
-	reg din;
+	reg [7:0] din;
 	reg start;
 	reg reset;
 
@@ -60,33 +60,20 @@ module top_tb;
 	initial begin
 		// Initialize Inputs
 		clk = 0;
-		din = 0;
+		din = 8'b00000000;
 		start = 0;
 		reset = 1;
 
 		// Wait 100 ns for global reset to finish
-		#100;
+		#10;
         
 		// Add stimulus here
 		reset = 0;
 		
 		#10;
 		reset = 1;
-		din = 1'b1;
 		#10;
-		din = 1'b0;
-		#10;
-		din = 1'b1;
-		#10;
-		din = 1'b0;
-		#10;
-		din = 1'b1;
-		#10;
-		din = 1'b0;
-		#10;
-		din = 1'b1;
-		#10;
-		din = 1'b0;
+		din = 8'b00000101;
 		start = 1;
 		#10;
 		start = 0;
@@ -97,3 +84,4 @@ module top_tb;
 	end
       
 endmodule
+
