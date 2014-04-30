@@ -5,7 +5,10 @@
  * cook food. This sketch handles reading the temperature, calculating the PID
  * output based on the current temperature and the target temperature.
  */
- 
+
+// Uncomment the next line to enable debug prints to the serial monitor
+//#define DEBUG_PRINT
+
 /* ***************************************************
  * INCLUDES
  * Add any includes to this section
@@ -16,6 +19,7 @@
  * Add any constants, defines or macros to this section
  * ***************************************************/
  
+
 // digital pin to control the water heater pin
 const int waterHeaterPin = 5;
 
@@ -34,6 +38,13 @@ void setup()
 {
   // waterHeaterPin set to OUTPUT
   pinMode(waterHeaterPin, OUTPUT);
+
+  // Print information to serial monitor if we are in debug mode
+  #ifdef DEBUG_PRINT
+  Serial.begin(115200);
+  Serial.println("Sous Vide Cooker - Debug Info");
+  Serial.println("[Enabled][Current][Target][Relay]");
+  #endif
 }
 
 /* Loop function is repeated indefinitely. Any code that should continuously
@@ -66,4 +77,31 @@ void loop()
   {
     digitalWrite(waterHeaterPin, LOW);
   }
+  
+  #ifdef DEBUG_PRINT
+  // Constant for the printing frequency
+  const unsigned long debugPrintFrequency = 500; // in ms
+  // Keep track of the last time we printed the debug info
+  static unsigned long lastDebugPrintTime = millis();
+  // If it's been long enough since the last print
+  if (millis() - lastDebugPrintTime >= debugPrintFrequency)
+  {
+    // Last print time set to now
+    lastDebugPrintTime = millis();
+    // Print the data
+    debugPrint(enabled, currentTemperature, targetTemperature, waterHeaterState);
+  }
+  #endif
 }
+
+/* debugPrint function is used to print debug data to the serial monitor for testing
+ * and developmental purposes. Function simply wraps the parameters into a sprintf
+ * call and issues a serial print. Function is only included if DEBUG_PRINT is defined */
+#ifdef DEBUG_PRINT
+void debugPrint(int en, int cur, int tar, int rel)
+{
+  char buffer[30];
+  sprintf(buffer, "[%d][%d][%d][%d]", en, cur, tar, rel);
+  Serial.println(buffer);
+}
+#endif
