@@ -170,23 +170,22 @@
             // 
             // btnCOMOpenClose
             // 
-            this.btnCOMOpenClose.Location = new System.Drawing.Point(173, 11);
+            this.btnCOMOpenClose.Location = new System.Drawing.Point(203, 11);
             this.btnCOMOpenClose.Name = "btnCOMOpenClose";
-            this.btnCOMOpenClose.Size = new System.Drawing.Size(75, 23);
+            this.btnCOMOpenClose.Size = new System.Drawing.Size(45, 23);
             this.btnCOMOpenClose.TabIndex = 20;
-            this.btnCOMOpenClose.Text = "Connect";
+            this.btnCOMOpenClose.Text = "Open";
             this.toolTip1.SetToolTip(this.btnCOMOpenClose, "Connect to selected COM Port");
             this.btnCOMOpenClose.UseVisualStyleBackColor = true;
             this.btnCOMOpenClose.Click += new System.EventHandler(this.btnCOMOpenClose_Click);
             // 
             // btnRefreshPorts
             // 
-            this.btnRefreshPorts.Font = new System.Drawing.Font("Webdings", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.btnRefreshPorts.Location = new System.Drawing.Point(144, 11);
             this.btnRefreshPorts.Name = "btnRefreshPorts";
-            this.btnRefreshPorts.Size = new System.Drawing.Size(23, 23);
+            this.btnRefreshPorts.Size = new System.Drawing.Size(53, 23);
             this.btnRefreshPorts.TabIndex = 21;
-            this.btnRefreshPorts.Text = "q";
+            this.btnRefreshPorts.Text = "Refresh";
             this.toolTip1.SetToolTip(this.btnRefreshPorts, "Refresh COM Ports list");
             this.btnRefreshPorts.UseVisualStyleBackColor = true;
             this.btnRefreshPorts.Click += new System.EventHandler(this.btnRefreshPorts_Click);

@@ -51,7 +51,7 @@ namespace CANTachometer
                         /*
                          * Enable/Disable appropriate controls
                          */
-                        btnCOMOpenClose.Text = "Disconnect";
+                        btnCOMOpenClose.Text = "Close";
                         btnRead.Enabled = true;
                         btnWrite.Enabled = true;
                         txtGreen.Enabled = true;
@@ -78,7 +78,7 @@ namespace CANTachometer
                 comPort.Close();
 
                 // Enable/Disable appropriate controls
-                btnCOMOpenClose.Text = "Connect";
+                btnCOMOpenClose.Text = "Open";
                 btnRead.Enabled = false;
                 btnWrite.Enabled = false;
                 txtGreen.Enabled = false;
@@ -132,6 +132,14 @@ namespace CANTachometer
             txtCANAddress.Text = readValue(0x05).ToString();
         }
 
+        /*
+         * Reads a value from the specified register
+         * 
+         * Parameter    Description
+         * register     What register to read
+         * 
+         * Returns a UInt16 of the value in the register
+         */
         private UInt16 readValue(byte register)
         {
             byte[] bytes = new byte[1];
@@ -148,6 +156,15 @@ namespace CANTachometer
             return (UInt16)((upper << 8) | lower);
         }
 
+        /*
+         * Write a value to the specified register
+         * 
+         * Parameter    Description
+         * register     The register to write
+         * value        The value to write
+         * 
+         * No return value
+         */
         private void writeValue(byte register, UInt16 value)
         {
             byte[] bytes = new byte[3];
