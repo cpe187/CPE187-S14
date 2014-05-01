@@ -4,6 +4,8 @@
  * The Sous Vide cooker heats a water bath to a specific temperature in order to
  * cook food. This sketch handles reading the temperature, calculating the PID
  * output based on the current temperature and the target temperature.
+ *
+ * Authors: Logan Odell, 
  */
 
 // Uncomment the next line to enable debug prints to the serial monitor
@@ -18,8 +20,6 @@
  * CONSTANTS
  * Add any constants, defines or macros to this section
  * ***************************************************/
- 
-
 // digital pin to control the water heater pin
 const int waterHeaterPin = 5;
 
