@@ -1,4 +1,4 @@
-/* Project Climate Control Vent System - Main Unit
+/* Project Climate Control Vent System - Wireless Thermometer
  * CSUS - CPE 187 Spring 2014
  *
  * The Climate Control Vent System consists of wireless temperature sensors 
