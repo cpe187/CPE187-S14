@@ -13,22 +13,27 @@
  * INCLUDES
  * Add any includes to this section
  * ***************************************************/
- 
+#include <Servo.h>
 /* ***************************************************
  * CONSTANTS
  * Add any constants, defines or macros to this section
  * ***************************************************/
- 
+const int ventServoPin = 9;
 /* ***************************************************
  * GLOBALS
  * Add any global variables to this section
  * ***************************************************/
- 
+Servo ventServo;
+int servoPosition = 0;
+
  /* Setup function is run once on startup. Use this function to initialize 
  * any variables, pin modes, libraries or make other one-time calls */
 void setup()
 {
-  
+  // Attach the pin to the servo object
+  ventServo.attach(ventServoPin);
+  // And reset the servo's position
+  ventServo.write(servoPosition);
 }
 
 /* Loop function is repeated indefinitely. Any code that should continuously
