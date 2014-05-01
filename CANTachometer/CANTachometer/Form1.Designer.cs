@@ -77,6 +77,10 @@
             this.btnWrite.UseVisualStyleBackColor = true;
             this.btnWrite.Click += new System.EventHandler(this.btnWrite_Click);
             // 
+            // comPort
+            // 
+            this.comPort.ReadTimeout = 500;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
