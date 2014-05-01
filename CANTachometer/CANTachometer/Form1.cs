@@ -64,7 +64,7 @@ namespace CANTachometer
 
                         // Read values from device
                         btnRead_Click(this, null);
-                    } catch (UnauthorizedAccessException error) {
+                    } catch (Exception error) {
                         MessageBox.Show(error.Message);
                     }
                 } else {
@@ -144,16 +144,24 @@ namespace CANTachometer
         {
             byte[] bytes = new byte[1];
             bytes[0] = register;
+            byte upper;
+            byte lower;
 
-            comPort.Write(bytes, 0, bytes.Length);
+            try {
+                comPort.Write(bytes, 0, bytes.Length);
 
-            byte upper = (byte)comPort.ReadByte();
-            byte lower = (byte)comPort.ReadByte();
-            comPort.ReadExisting(); // clear rest of buffer
+                upper = (byte)comPort.ReadByte();
+                lower = (byte)comPort.ReadByte();
+                comPort.ReadExisting(); // clear rest of buffer
 
-            MessageBox.Show(((UInt16)((upper << 8) | lower)).ToString());
+                MessageBox.Show(((UInt16)((upper << 8) | lower)).ToString());
 
-            return (UInt16)((upper << 8) | lower);
+                return (UInt16)((upper << 8) | lower);
+            } catch (Exception e) {
+                MessageBox.Show(e.Message);
+            }
+
+            return 0;
         }
 
         /*
@@ -172,8 +180,11 @@ namespace CANTachometer
             bytes[1] = (byte)(value >> 8); // upper
             bytes[2] = (byte)(value & 0x00FF); // lower
 
-            comPort.Write(bytes, 0, 3);
-
+            try {
+                comPort.Write(bytes, 0, 3);
+            } catch (Exception e) {
+                MessageBox.Show(e.Message);
+            }
         }
 
         private void btnRefreshPorts_Click(object sender, EventArgs e)
