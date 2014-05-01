@@ -5,7 +5,7 @@
  * cook food. This sketch handles reading the temperature, calculating the PID
  * output based on the current temperature and the target temperature.
  *
- * Authors: Logan Odell, 
+ * Authors: Logan Odell, Waleng Vang, Va Banh, 
  */
 
 // Uncomment the next line to enable debug prints to the serial monitor
