@@ -25,6 +25,7 @@ const int ventServoPin = 9;
  * ***************************************************/
 Servo ventServo;
 int servoPosition = 0;
+int desiredTemperature = 75; // in degrees F
 
  /* Setup function is run once on startup. Use this function to initialize 
  * any variables, pin modes, libraries or make other one-time calls */
@@ -42,4 +43,11 @@ void setup()
 void loop()
 {
   
+}
+
+/* This function needs to be implemented and will turn on or off the HVAC.
+ * How do we plan on doing this? */
+void setHVAC(int mode)
+{
+  // TODO: Implement this. Mode should be 0 for off, 1 for cool, 2 for heat.
 }
