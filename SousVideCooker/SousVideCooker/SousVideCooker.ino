@@ -22,6 +22,7 @@
  * ***************************************************/
 // digital pin to control the water heater pin
 const int waterHeaterPin = 5;
+int sensorPin = A0; //Signal pin on digital 10
 
 /* ***************************************************
  * GLOBALS
@@ -105,3 +106,32 @@ void debugPrint(int en, int cur, int tar, int rel)
   Serial.println(buffer);
 }
 #endif
+
+float getTemp()
+
+{
+
+    //getting the voltage reading from the temperature sensor
+
+    int reading = analogRead(sensorPin);  
+
+    // converting that reading to voltage, for 3.3v arduino use 3.3
+
+    float voltage = reading * 5.0;
+
+    voltage /= 1024.0;
+
+   
+
+    float tempC = (voltage - 0.5) * 100 ;  //converting from 10 mv per degree wit 500 mV offset
+
+                                              //to degrees ((voltage - 500mV) times 100)
+
+                                            
+
+    // now convert to Fahrenheit
+
+    float temp = (tempC * 9.0 / 5.0) + 32.0;
+
+    return temp;
+}
