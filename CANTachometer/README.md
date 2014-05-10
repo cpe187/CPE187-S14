@@ -11,6 +11,8 @@ CPE 187 - Embedded Processor System Design
 
 ---
 
+The application connects to a COM port with 9600/8-N-1 settings. After connecting to the device, it will send a read command for each registers.
+
 Reading data
 
     Message format: [identifier]
