@@ -154,7 +154,7 @@ namespace CANTachometer
                 lower = (byte)comPort.ReadByte();
                 comPort.ReadExisting(); // clear rest of buffer
 
-                MessageBox.Show(((UInt16)((upper << 8) | lower)).ToString());
+                //MessageBox.Show(((UInt16)((upper << 8) | lower)).ToString());
 
                 return (UInt16)((upper << 8) | lower);
             } catch (Exception e) {
@@ -181,7 +181,7 @@ namespace CANTachometer
             bytes[2] = (byte)(value & 0x00FF); // lower
 
             try {
-                comPort.Write(bytes, 0, 3);
+                comPort.Write(bytes, 0, bytes.Length);
             } catch (Exception e) {
                 MessageBox.Show(e.Message);
             }
@@ -202,6 +202,16 @@ namespace CANTachometer
             if (comPort.IsOpen) {
                 comPort.Close();
             }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            String aboutText = "CAN Tachometer Configuration Application\n" +
+                               "\n" +
+                               "Author:\tSachleen Sandhu\n" +
+                               "Class:\tCpE 187\n" +
+                               "Semester:\tSpring 2014\n";
+            MessageBox.Show(aboutText);
         }
     }
 }

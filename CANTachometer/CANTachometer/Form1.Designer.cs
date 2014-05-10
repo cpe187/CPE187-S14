@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.lstComPorts = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnWrite = new System.Windows.Forms.Button();
@@ -47,6 +48,8 @@
             this.btnCOMOpenClose = new System.Windows.Forms.Button();
             this.btnRefreshPorts = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.lblAbout = new System.Windows.Forms.LinkLabel();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lstComPorts
@@ -68,7 +71,7 @@
             // 
             // btnWrite
             // 
-            this.btnWrite.Location = new System.Drawing.Point(173, 170);
+            this.btnWrite.Location = new System.Drawing.Point(173, 200);
             this.btnWrite.Name = "btnWrite";
             this.btnWrite.Size = new System.Drawing.Size(75, 22);
             this.btnWrite.TabIndex = 7;
@@ -84,7 +87,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 43);
+            this.label2.Location = new System.Drawing.Point(12, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 13);
             this.label2.TabIndex = 9;
@@ -92,14 +95,14 @@
             // 
             // txtGreen
             // 
-            this.txtGreen.Location = new System.Drawing.Point(87, 40);
+            this.txtGreen.Location = new System.Drawing.Point(87, 70);
             this.txtGreen.Name = "txtGreen";
             this.txtGreen.Size = new System.Drawing.Size(161, 20);
             this.txtGreen.TabIndex = 10;
             // 
             // txtYellow
             // 
-            this.txtYellow.Location = new System.Drawing.Point(87, 66);
+            this.txtYellow.Location = new System.Drawing.Point(87, 96);
             this.txtYellow.Name = "txtYellow";
             this.txtYellow.Size = new System.Drawing.Size(161, 20);
             this.txtYellow.TabIndex = 12;
@@ -107,7 +110,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 69);
+            this.label3.Location = new System.Drawing.Point(12, 99);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 11;
@@ -115,7 +118,7 @@
             // 
             // txtRed
             // 
-            this.txtRed.Location = new System.Drawing.Point(87, 92);
+            this.txtRed.Location = new System.Drawing.Point(87, 122);
             this.txtRed.Name = "txtRed";
             this.txtRed.Size = new System.Drawing.Size(161, 20);
             this.txtRed.TabIndex = 14;
@@ -123,7 +126,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 95);
+            this.label4.Location = new System.Drawing.Point(12, 125);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(27, 13);
             this.label4.TabIndex = 13;
@@ -131,7 +134,7 @@
             // 
             // txtFlashingRed
             // 
-            this.txtFlashingRed.Location = new System.Drawing.Point(87, 118);
+            this.txtFlashingRed.Location = new System.Drawing.Point(87, 148);
             this.txtFlashingRed.Name = "txtFlashingRed";
             this.txtFlashingRed.Size = new System.Drawing.Size(161, 20);
             this.txtFlashingRed.TabIndex = 16;
@@ -139,7 +142,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 121);
+            this.label5.Location = new System.Drawing.Point(12, 151);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 13);
             this.label5.TabIndex = 15;
@@ -147,7 +150,7 @@
             // 
             // txtCANAddress
             // 
-            this.txtCANAddress.Location = new System.Drawing.Point(87, 144);
+            this.txtCANAddress.Location = new System.Drawing.Point(87, 174);
             this.txtCANAddress.Name = "txtCANAddress";
             this.txtCANAddress.Size = new System.Drawing.Size(161, 20);
             this.txtCANAddress.TabIndex = 18;
@@ -155,7 +158,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 147);
+            this.label6.Location = new System.Drawing.Point(12, 177);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 13);
             this.label6.TabIndex = 17;
@@ -163,7 +166,7 @@
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(12, 170);
+            this.btnRead.Location = new System.Drawing.Point(12, 200);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(75, 22);
             this.btnRead.TabIndex = 19;
@@ -194,11 +197,33 @@
             this.btnRefreshPorts.UseVisualStyleBackColor = true;
             this.btnRefreshPorts.Click += new System.EventHandler(this.btnRefreshPorts_Click);
             // 
+            // lblAbout
+            // 
+            this.lblAbout.Location = new System.Drawing.Point(93, 200);
+            this.lblAbout.Name = "lblAbout";
+            this.lblAbout.Size = new System.Drawing.Size(74, 22);
+            this.lblAbout.TabIndex = 22;
+            this.lblAbout.TabStop = true;
+            this.lblAbout.Text = "About";
+            this.lblAbout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblAbout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // label7
+            // 
+            this.label7.Location = new System.Drawing.Point(12, 37);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(236, 30);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "Enter the RPM at which each of the following colors should activate.";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(260, 204);
+            this.ClientSize = new System.Drawing.Size(260, 234);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblAbout);
             this.Controls.Add(this.btnRefreshPorts);
             this.Controls.Add(this.btnCOMOpenClose);
             this.Controls.Add(this.btnRead);
@@ -216,6 +241,7 @@
             this.Controls.Add(this.lstComPorts);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
@@ -248,6 +274,8 @@
         private System.Windows.Forms.Button btnCOMOpenClose;
         private System.Windows.Forms.Button btnRefreshPorts;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.LinkLabel lblAbout;
+        private System.Windows.Forms.Label label7;
 
     }
 }
