@@ -11,8 +11,10 @@ CPE 187 - Embedded Processor System Design
 
 ---
 
-    Message format for reading data from device:
-    [identifier]
+Reading data
+
+    Message format: [identifier]
+    Response: [upper byte][lower byte]
     
     Identifier   Setting destination
     0x01         Green tachometer setting
@@ -21,9 +23,10 @@ CPE 187 - Embedded Processor System Design
     0x04         Flashing red tachometer setting
     0x05         CAN address
 
+Writing Data
 
-    Message format for writing data to device:
-    [identifier][upper byte][lower byte]
+    Message format: [identifier][upper byte][lower byte]
+    Response: none
 
     Identifier   Setting destination
     0x81         Green tachometer setting
