@@ -33,9 +33,7 @@ void loop()
 {
   currentTemperature = getTemp();
   
-  #ifdef DEBUG_PRINT
   debugPrint();
-  #endif
   stateMachine();
   checkEthernet();
 }
@@ -221,6 +219,7 @@ void stateMachine()
         if (millis() - lastStateChangeTime > 40000)
         {
           state=CLOSE_TEMEPRATURE;
+          lastStateChangeTime = millis();
           Serial.println("Changing to CLOSE_TEMPERATURE state");
         }
         break;
@@ -228,11 +227,13 @@ void stateMachine()
         if (currentTemperature + 5 < desiredTemperature)
         {
           state = LOWER_TEMPERATURE;
+          lastStateChangeTime = millis();
           Serial.println("Changing to LOWER_TEMPERATURE state");
         }
         else if (currentTemperature + 2 < desiredTemperature)
         {
           state = TURNED_ON;
+          lastStateChangeTime = millis();
           Serial.println("Changing to TURNED_ON state");
         }
         break;
