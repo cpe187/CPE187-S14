@@ -1,0 +1,14 @@
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 9:32:06 AM On 4/22/2014
+
+Output: Bill of Materials
+Type  : BOM
+From  : Variant [[No Variations]] of Project [PCB_Project1.PrjPCB]
+   Generated File[Bill of Materials-PCB_Project1.xls]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 9:32:14 AM On 4/22/2014
