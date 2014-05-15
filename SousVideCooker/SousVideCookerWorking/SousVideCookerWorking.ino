@@ -118,22 +118,25 @@ EthernetClient client = server.available();
             client.println();
             client.println("<!DOCTYPE HTML>");
             client.println("<html>");
+            client.println("<center>");
+            client.println("<h1>Sprint 2014 CPE 187 - Sous Vide Cooker</h1>");
             // output the value of each analog input pin
             client.print("Current Temperature: ");
             client.print(currentTemperature);
             client.print("<br/>Desired Temperature: ");
             client.print(desiredTemperature);
             client.print("<br/>");
-            if (enabled)
-              client.print("<a href=\"/off\">Turn Off</a><br/>");
-            else
-              client.print("<a href=\"/on\">Turn On</a><br/>");
             client.print("<form name=\"input\" action=\"temp\" method=\"get\">");
             client.print("Set Desired Temperature: <input type=\"number\" name=\"val\" value=\"");
             client.print((int)desiredTemperature);
             client.print("\">");
             client.print("<input type=\"submit\" value=\"Set\">");
             client.print("</form>");
+            if (enabled)
+              client.print("<a href=\"/off\">Turn Off</a><br/>");
+            else
+              client.print("<a href=\"/on\">Turn On</a><br/>");
+            client.println("</center>");
             client.println("</html>");
           }
           break;
